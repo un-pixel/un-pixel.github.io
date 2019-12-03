@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Comparaisons - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Comparaisons</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+												<p>
+													En JavaScript, les opérateurs de comparaison sont très similaires aux opérateurs de comparaisons mathématiques (>, ≥, <, ≤, =, ≠).
+												</p>
+												<p>
+													Comme en mathématiques, ces expressions peuvent être vraies ou fausses. Une comparaison retourne donc une valeur booléenne (<code>true</code> ou <code>false</code>). La seule différence est que certains opérateurs sont stricts et d’autres ne le sont pas.
+												</p>
+												<p>
+													Par exemple, il existe deux opérateurs différents pour exprimer l’égalité entre deux valeurs : <code>==</code> et <code>===</code>. Le premier n’est pas strict, puisqu’il effectue une conversion de type. C’est-à-dire qu’il convertit les deux côtés de l’égalité au même type (nombre, chaîne de caractères, valeur booléenne...). De cette façon l’égalité <code>1 == "1"</code> retourne <code>true</code>.
+												</p>
+												<p>
+													Par contre, l’opérateur <code>===</code> est strict. Il ne fait aucune conversion de type. L’égalité <code>1 === "1"</code> retourne donc <code>false</code>.
+												</p>
+												<p>
+													De manière générale, il vaut mieux utiliser l’opérateur strict, puisqu’il est plus rapide et que la conversion de type peut parfois engendrer des comportements inattendus.
+												</p>
+												<p>
+													L’opérateur contraire à l’égalité est l’inégalité. En JavaScript, il se dénote <code>!=</code> ou <code>!==</code>. Le deuxième étant la version stricte. Par exemple, <code>2 !== 3</code> retourne true.
+													Il existe aussi, comme en mathématiques des opérateurs relatifs : <code><</code>, <code>></code>. Le premier (<code><</code>) évalue si le terme de gauche est plus petit que celui de droite. Par exemple, <code>5 < 3</code> retourne <code>false</code>.
+												</p>
+												<p>
+													Le deuxième (<code>></code>) évalue si le terme de gauche est plus grand que celui de droite. Par exemple, <code>5 > 3</code> retourne <code>true</code>.
+												</p>
+												<p>
+													Comme en mathématiques, il existe aussi les opérateurs plus petit ou égal et plus grand ou égal. Le premier se note <code><=</code>. Le second se note <cpde>>=</code>.
+												</p>
+												<p>
+													Ils fonctionnent comme en mathématiques. Par exemple <cpde>3 <= 3</code> et <code>2 <= 3</code> retournent tous les deux <code>true</code>. Il en va de même pour <code>5 >= 5</code> et <code>6 >= 5</code>.
+												</p>
+												<p>
+													Finalement, il existe aussi des opérateurs logiques. Ces opérateurs logiques retournent aussi une valeur booléenne (<code>true</code> ou <code>false</code>).
+												</p>
+												<p>
+													Il existe trois principaux opérateurs logiques : <code>||</code>, <code>&&</code> et <code>!</code>.
+												</p>
+												<p>
+													Le premier (<code>||</code>) est un <i>OU logique</i>. Si l’un des deux côtés de l’opérateur est <code>true</code>, il retourne <code>true</code>. Cependant, si les deux côtés sont <code>false</code>, il retourne <code>false</code>. En résumé :
+												</p>
+												<div class="table-wrapper">
+													<table>
+														<thead>
+															<tr>
+																<th>Expression</th>
+																<th>Résultat</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><code>true || true</code></td>
+																<td><code>true</code></td>
+															</tr>
+															<tr>
+																<td><code>true || false</code></td>
+																<td><code>true</code></td>
+															</tr>
+															<tr>
+																<td><code>false || true</code></td>
+																<td><code>true</code></td>
+															</tr>
+															<tr>
+																<td><code>false || false</code></td>
+																<td><code>false</code></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<p>
+													Le deuxième (<code>&&</code>) est un <i>ET logique</i>. Il retourne <code>true</code> seulement si les deux côtés de l’expression sont <code>true</code>. Si l’un des deux côtés est <code>false</code>, il retourne <code>false</code>. En résumé :
+												</p>
+
+													<div class="table-wrapper">
+														<table>
+															<thead>
+																<tr>
+																	<th>Expression</th>
+																	<th>Résultat</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td><code>true && true</code></td>
+																	<td><code>true</code></td>
+																</tr>
+																<tr>
+																	<td><code>true && false</code></td>
+																	<td><code>false</code></td>
+																</tr>
+																<tr>
+																	<td><code>false && true</code></td>
+																	<td><code>false</code></td>
+																</tr>
+																<tr>
+																	<td><code>false && false</code></td>
+																	<td><code>false</code></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+												<p>
+													Le troisième (<code>!</code>) est probablement le plus simple. Il s’agit d’un <i>NON logique</i>. Il ne compare pas vraiment, puisque contrairement aux autres opérateurs, il n’a pas de côté gauche. En effet, sa fonction se limite à retourner l’inverse de ce qui est à droite. En résumé :
+												</p>
+												<div class="table-wrapper">
+													<table>
+														<thead>
+															<tr>
+																<th>Expression</th>
+																<th>Résultat</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><code>!true</code></td>
+																<td><code>false</code></td>
+															</tr>
+															<tr>
+																<td><code>!false</code></td>
+																<td><code>true</code></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<p>
+													Puisque tous ces opérateurs retournent des valeurs booléennes, il est tout à fait possible de les combiner, pour créer des expressions un peu plus complexes.<sup>1</sup> Par exemple : <code>(1 > 2) || (5 >= 5)</code> retourne <code>true</code>.
+												</p>
+										</div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      	Évalue les expressions booléennes ci-dessous :
+                      </p>
+                      <hr class="major" />
+												<div class="box">
+													<h3><code>5 < 3</code></h3><br>
+													<input type="radio" id="q1-choice-1" name="q1">
+													<label for="q1-choice-1"><code>true</code></label>
+													<br>
+													<input type="radio" id="q1-choice-2" name="q1">
+													<label for="q1-choice-2"><code>false</code></label>
+											  </div>
+												<hr class="major" />
+													<div class="box">
+														<h3><code>(6 - 5) <= 1</code></h3><br>
+														<input type="radio" id="q2-choice-1" name="q2">
+														<label for="q2-choice-1"><code>true</code></label>
+														<br>
+														<input type="radio" id="q2-choice-2" name="q2">
+														<label for="q2-choice-2"><code>false</code></label>
+												  </div>
+													<hr class="major" />
+														<div class="box">
+															<h3><code>(5 > 3) && (1 + 1 === "2")</code></h3><br>
+															<input type="radio" id="q3-choice-1" name="q3">
+															<label for="q3-choice-1"><code>true</code></label>
+															<br>
+															<input type="radio" id="q3-choice-2" name="q3">
+															<label for="q3-choice-2"><code>false</code></label>
+													  </div>
+														<hr class="major" />
+														<div class="box">
+																<h3><code>!(2 < (9 - 5)) || (4/2 == "2")</code></h3><br>
+																<input type="radio" id="q4-choice-1" name="q4">
+																<label for="q4-choice-1"><code>true</code></label>
+																<br>
+																<input type="radio" id="q4-choice-2" name="q4">
+																<label for="q4-choice-2"><code>false</code></label>
+														 </div>
+														 <hr class="major" />
+ 														<div class="box">
+ 																<h3><code>!("1" === "1") && !(1 + 1 != "2")</code></h3><br>
+ 																<input type="radio" id="q5-choice-1" name="q5">
+ 																<label for="q5-choice-1"><code>true</code></label>
+ 																<br>
+ 																<input type="radio" id="q5-choice-2" name="q5">
+ 																<label for="q5-choice-2"><code>false</code></label>
+ 														 </div>
+														 <hr class="major" />
+ 														<div class="box">
+ 																<h3><code>(false || 7 <= 8) && ((5 < 6) && true)</code></h3><br>
+ 																<input type="radio" id="q6-choice-1" name="q6">
+ 																<label for="q6-choice-1"><code>true</code></label>
+ 																<br>
+ 																<input type="radio" id="q6-choice-2" name="q6">
+ 																<label for="q6-choice-2"><code>false</code></label>
+ 														 </div>
+														 <hr class="major" />
+														 <div class="box">
+  																<h3><code>!false === (6 < 8)</code></h3><br>
+  																<input type="radio" id="q7-choice-1" name="q7">
+  																<label for="q7-choice-1"><code>true</code></label>
+  																<br>
+  																<input type="radio" id="q7-choice-2" name="q7">
+  																<label for="q7-choice-2"><code>false</code></label>
+  														 </div>
+															 <hr class="major" />
+															 <div class="box">
+	  																<h3><code>!(8 < 1) && ((7 >= 1) !== false)</code></h3><br>
+	  																<input type="radio" id="q8-choice-1" name="q8">
+	  																<label for="q8-choice-1"><code>true</code></label>
+	  																<br>
+	  																<input type="radio" id="q8-choice-2" name="q8">
+	  																<label for="q8-choice-2"><code>false</code></label>
+	  														 </div>
+																 <br><a id="exec" class="button primary large">Vérifier mes réponses</a>
+                    </div>
+                    </div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Opérateurs de comparaison [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_de_comparaison
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+      <script>
+        let leftCol = document.getElementsByClassName("col-6 col-12-medium")[1];
+				let divs = leftCol.getElementsByClassName("box");
+				const ansKey = "01010111";
+				document.getElementById("exec").addEventListener("click", () => {
+					let ans = Array.from(divs).map(x => Array.from(x.getElementsByTagName("input")).map(el => el.checked));
+					ans = ans.map(x => !x.indexOf(true)).map(x => Number(x).toString()).join("");
+					if(ansKey === ans) {
+						handleSuccess();
+					} else {
+						handleFail();
+					}
+				});
+      </script>
+
+	</body>
+</html>

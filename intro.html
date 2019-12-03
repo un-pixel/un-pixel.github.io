@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Introduction - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Introduction</h1>
+									</header>
+                    <p>
+                    Avant de commencer à programmer, il faudrait définir ce qu’est un programme.
+                    </p>
+                    <hr class="major" />
+                    <p>
+                    Un programme est comme une recette pour un ordinateur. C’est une liste d’instruction qu’il suit à la lettre, afin de transformer les données entrées par l’utilisateur. Tout comme une recette indique à un humain comment transformer des ingrédients afin d’arriver à un résultat final.
+                    </p>
+                    <p>
+                    La seule différence entre un programme et une recette : une recette est écrite par un humain pour des humains, alors qu’un programme est écrit par un humain pour des ordinateurs. En écrivant une recette, on peut donc être assez imprécis, puisque la personne qui la lira sera au courant de certaines conventions.
+                    </p>
+                    <p>
+                    Si j’écris « Dans un petit bol, battre l’œuf avec le lait », un humain comprend qu’il doit utiliser une fourchette ou un batteur, et remuer rapidement le mélange de lait et d’oeufs. Même si le mot « battre » a plusieurs sens, l’humain comprend grâce au contexte.
+                    </p>
+                    <p>
+                    Ce n’est pas le cas d’un ordinateur. Il ne comprend pas le contexte ou les conventions humaines. Il faut donc être très précis. Pour qu’une machine comprenne, on pourrait écrire l’exemple de tout à l’heure de la manière suivante :
+                    </p>
+                    <pre>
+                      <code>Déplacer “oeuf” dans “bol”;
+Déplacer “lait” dans “bol”;
+Remuer contenu de “bol” avec “fourchette” à vitesse “élevée”;
+Répéter instruction #3 25 fois;</code>
+                    </pre>
+                    <hr class="major" />
+                    <p>
+                    Évidemment, ce n’est pas un vrai programme. C’est ce qu’on appelle du pseudo-code. C’est-à-dire que le code n’est pas écrit dans un véritable langage de programmation. Un langage de programmation est ce qu’on utilise pour communiquer avec l’ordinateur. Il en existe plusieurs avec différents champs d’applications.<sup>1</sup>
+                    </p>
+                    <p>
+                    Celui que nous allons utiliser au cours de ce tutoriel est JavaScript. Il est principalement utilisé pour le développement web. C’est-à-dire pour la création de sites internet. Il peut toutefois être utilisé partout : pour créer des jeux vidéos, pour créer des applications mobiles… C’est pourquoi j’ai décidé d’utiliser ce langage pour ce tutoriel : il est très versatile.<sup>2</sup>
+                    </p>
+                    <hr class="major" />
+                    <p>
+                    Dans le chapitre suivant, nous explorerons le concept des variables. Mais avant, comme il est coutume dans les tutoriels de programmation, commençons par le programme de base par excellence :  « Hello, world! ». Il suffit de faire dire à l’ordinateur la phrase suivante : « Hello, world! » Arriveras-tu à modifier le code ci-dessus afin de reproduire ce programme?
+                    </p>
+
+                    <textarea id="example" style="width:50%;">alert("Y arriveras-tu?");</textarea>
+                    <br><a id="exec" class="button primary large">Exécuter</a><br><br>
+										<div class="box" style='width:55%;'>
+											Remarque que la fonction <code>alert</code> permet d'afficher un message sur la page. C'est l'une des façons d'afficher des données en Javascript.
+										</div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> PAGE, Trevor. How To Program With Java, (réf. du 10 octobre 2019), <em>The 5 basic concepts of every programming language [en ligne]</em>, adresse URL:https://howtoprogramwithjava.com/programming-101-the-5-basic-concepts-of-any-programming-language/<br>
+								<sup>2</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Types et grammaire [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Types_et_grammaire</p></div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+        let editor = CodeMirror.fromTextArea(document.getElementById('example'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor.setOption("theme", theme);
+        document.getElementsByClassName('CodeMirror')[0].style.width = '70%';
+        document.getElementById('exec').addEventListener("click", () => {
+            let code = editor.getValue();
+            let fn = new Function(code);
+            fn();
+            if(code.indexOf('alert("Hello, world!")') !== -1) {
+              handleSuccess();
+            } else {
+              handleFail();
+            }
+        });
+      </script>
+
+	</body>
+</html>

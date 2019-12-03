@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bibliographie - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Bibliographie</h1>
+									</header>
+									<h2>Produit</h2>
+									<h3><u>Reportage</u></h3>
+									<ol>
+  <li>NGUGI, Evelyn. « The Secret to Business Writing », <em>Crash Course Business</em>, Crash Course (27 mars 2019), 12 min, coul.</li>
+</ol>
+									<h3><u>Site internet</u></h3>
+									<ol>
+  <li>GUGLIERI, Claudio. Creative Bloq, (réf. du 10 octobre 2019), <em>Get the perfect website layout in 27 steps [en ligne]</em>, adresse URL: https://www.creativebloq.com/web-design/steps-perfect-website-layout-812625
+    <br>
+    <br>
+  </li>
+  <li>LOFGREN, LARS. QuickSprout, (réf. du 10 octobre 2019), <em>13 Website Design Best Practices For 2019 [en ligne]</em>, adresse URL: https://www.quicksprout.com/website-design-best-practices/
+    <br>
+    <br>
+  </li>
+  <li>MALHOTRA, Aakash. JavaScript in Plain English, (réf. du 9 octobre 2019), <em>How to host a static website for free [en ligne]</em>, adresse URL: https://medium.com/javascript-in-plain-english/how-to-host-a-static-website-for-free-7a2a959f5e4</li>
+</ol>
+									<h2>Thème</h2>
+									<h3><u>Blogue</u></h3>
+									<ol>
+  <li>SLAUGHTER, Nathan. Data Driven Investor, En ligne : https://medium.com/datadriveninvestor/dont-learn-a-programming-language-solve-a-problem-instead-654f6bbfb573 (page publiée le 11 février 2019).</li>
+</ol>
+									<h3><u>Entrevue</u></h3>
+									<ol>
+  <li>Palmer, Tammy. <em>Entrevue avec Elif Bilgin, étudiante en génie biomédical</em>, 22 avril 2017. [<em>Disponible en ligne</em> : https://www.teenvogue.com/story/how-coding-can-save-environment]</li>
+</ol>
+									<h3><u>Quotidien</u></h3>
+									<ol>
+  <li>MERCURE, Philippe. « La programmation informatique dès la maternelle », La Presse (Montréal), version numérique (15 novembre 2017), p. 7.</li>
+</ol>
+									<h3><u>Site internet</u></h3>
+									<ol>
+  <li>PAGE, Trevor. How To Program With Java, (réf. du 10 octobre 2019), <em>The 5 basic concepts of every programming language [en ligne]</em>, adresse URL:https://howtoprogramwithjava.com/programming-101-the-5-basic-concepts-of-any-programming-language/</li>
+	<br><br><li>S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Types et grammaire [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Types_et_grammaire</li>
+</ol>
+
+<h2><u>Images utilisées</u></h2>
+<h3>Page d'accueil</h3>
+<ol>
+	<li>Image représentant du code : <a href="https://p0.piqsels.com/preview/956/344/866/text-advertisement-poster-number.jpg">Piqsel</a> (image libre de droits)</li>
+</ol>
+<h3><u>Opérations</u></h3>
+<ol>
+	<li>Image représentant une division euclidienne : <a href="http://profmath.uqam.ca/~fabiennevenant/MAT3812/hiver17/projets/Division/reste.html">Université du Québec à Montréal</a></li>
+</ol>
+<h3><u>Menu</u></h3>
+<ol>
+	<li>Logo StackOverflow : <a href="https://stackoverflow.com/">StackOverflow</a></li>
+	<br><br><li>Logo MDN : <a href="https://developer.mozilla.org/fr/">MDN web docs</a></li>
+</ol>
+<h3><u>Favicon</u></h3>
+<ol>
+	<li>Logo JavaScript : <a href="https://www.favicon.cc/?action=icon&file_id=749674">Favicon.cc</a></li>
+</ol>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+        let editor = CodeMirror.fromTextArea(document.getElementById('example'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor.setOption("theme", theme);
+        document.getElementsByClassName('CodeMirror')[0].style.width = '70%';
+        document.getElementById('exec').addEventListener("click", () => {
+            let code = editor.getValue();
+            let fn = new Function(code);
+            fn();
+            if(code.indexOf('alert("Hello, world!")') !== -1) {
+              handleSuccess();
+            } else {
+              handleFail();
+            }
+        });
+      </script>
+
+	</body>
+</html>

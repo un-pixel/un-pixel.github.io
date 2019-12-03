@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Boucles - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Boucles</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+												<p>
+													Même si tu as suivi tous les chapitres précédents, il est possible que tu te questionnes encore sur l’utilité de la programmation. C’est normal : tous les concepts que nous avons vus peuvent être exécutés par des humains.
+												</p>
+												<p>
+													Calculer le résultat d’une opération, prendre en compte des conditions… rien de bien impressionnant. Toutefois, la vraie puissance de la programmation réside dans sa capacité à reproduire une tâche un grand nombre de fois, très rapidement.
+												</p>
+												<p>
+													En effet, un être humain à une certaine patience, mais il ne pourra pas répéter la même tâche des milliers de fois. L’ordinateur, quant à lui, le fait sans discuter et en une fraction de seconde.
+												</p>
+												<p>
+													Ce concept de répétition est représenté par des boucles. En Javascript, il existe plusieurs types de boucles. Toutefois, ce tutoriel se concentrera seulement sur la plus utilisée : la boucle en <code>for</code>.
+												</p>
+												<p>
+													Commençons directement avec un exemple.
+												</p>
+												<pre><code>for(let i = 0; i < 5; i++) {
+  alert(“Bonjour”);
+}</code></pre>
+												<p>
+													Cette boucle permet d’afficher un message disant <code>“Bonjour”</code> cinq fois. Observons la syntaxe plus en détail. Commençons par ce qu’il y a entre les parenthèses : <code>let i = 0; i < 5; i++</code>.
+												</p>
+												<p>
+													En premier lieu, nous déclarons la variable <code>i</code> et nous lui assignons une valeur de <code>0</code>. En deuxième lieu, il y a une expression de comparaison : <code>i < 5</code>. En dernier lieu, il y a quelque chose de nouveau : <code>i++</code>. Cette expression est équivalente à <code>i = i + 1</code>. Il s’agit simplement d’un raccourci pour augmenter la valeur de <code>i</code> de 1.
+												</p>
+												<p>
+													Le fonctionnement de la boucle est assez simple. L’ordinateur commence par évaluer l’expression de comparaison avec la valeur de <code>i</code> qui a été déclarée. Ensuite, le <code>i++</code> et le code contenu entre les accolades sont exécutés. L’expression comparative est ensuite réévaluée. Si elle retourne <code>true</code>, l’exécution se poursuit.
+												</p>
+												<p>
+													Ce processus se répète jusqu’à ce que l’expression comparative retourne <code>false</code>.<sup>1</sup> Voici donc le processus d’exécution de la boucle de l’exemple précédent :
+												</p>
+												<ul>
+													<li>La variable <code>i</code> est déclarée. La valeur de <code>0</code> y est assignée.</li><br>
+													<li><code>i = 0</code>, <code>i < 5</code> retourne <code>true</code>, donc l’exécution continue</li><br>
+													<li><code>i = i + 1</code> (<code>i = 1</code>)</li><br>
+													<li><code>alert(“Bonjour”)</code></li><br>
+													<li><code>i = 1</code>, <code>i < 5</code> retourne <code>true</code>, donc l’exécution continue</li><br>
+													<li><code>i = i + 1</code> (<code>i = 2</code>)</li><br>
+													<li><code>alert(“Bonjour”)</code></li><br>
+													<li><code>i = 2</code>, <code>i < 5</code> retourne <code>true</code>, donc l’exécution continue</li><br>
+													<li><code>i = i + 1 (i = 3)</code></li><br>
+													<li><code>alert(“Bonjour”)</code></li><br>
+													<li><code>i = 3</code>, <code>i < 5</code> retourne <code>true</code>, donc l’exécution continue</li><br>
+													<li><code>i = i + 1</code> (<code>i = 4</code>)</li><br>
+													<li><code>alert(“Bonjour”)</code></li><br>
+													<li><code>i = 4</code>, <code>i < 5</code> retourne <code>true</code>, donc l’exécution continue</li><br>
+													<li><code>i = i + 1</code> (<code>i = 5</code>)</li><br>
+													<li><code>alert(“Bonjour”)</code></li><br>
+													<li><code>i = 5</code>, <code>i < 5</code> retourne <code>false</code>, donc l’exécution s’arrête</li><br>
+												</ul>
+												<p>
+													Dans ce cas-ci, la tâche accomplie par la boucle est très simple. Toutefois, en modifiant les paramètres de la boucle, il est possible d’accomplir des tâches beaucoup plus complexes.
+												</p>
+												<p>
+													Prenons pour exemple la suite de Fibonacci. Cette suite très connue va comme suit : <code>0, 1, 1, 2, 3, 5, 8, 13, 21...</code>
+												</p>
+												<p>
+													La règle de cette suite est bien simple. Elle commence à 0 et 1. Tous les nombres consécutifs sont la somme des deux derniers.
+												</p>
+												<p>
+													Essayons maintenant de définir cette suite avec une boucle JavaScript :
+												</p>
+													<pre><code>function fibonacci(n) {
+	let a = 0;
+	let b = 1;
+	for(let i = 1; i <= n; i++) {
+		let c = b;
+		b = a + b;
+		a = c;
+	}
+	return a;
+}</code></pre>
+												<p>
+													Analysons le code ci-haut. L’argument <code>n</code> de la fonction fibonacci est l’index de la suite. Ainsi, <code>fibonacci(0)</code> retourne <code>0</code>, <code>fibonacci(4)</code> retourne <code>3</code> et ainsi de suite. Cet argument est utilisé par la boucle, qui répète <code>n</code> fois le bloc de code entre les accolades. Cette série d’instructions permet de générer deux termes de la séquence. La valeur de <code>a</code> devient celle de <code>b</code>et la valeur de <code>b</code> est additionnée de l’ancienne valeur de <code>a</code> (et non pas sa nouvelle valeur, qui correspond à <code>b</code>). À la fin de la boucle, la fonction retourne <code>a</code>, et le programme s’arrête.
+												</p>
+
+										</div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      	Complète la fonction <code>générerListe(n)</code>. Cette fonction doit prendre pour entrée un nombre <code>n</code> et retourner (<code>return</code>) une liste. Cette liste doit contenir tous les chiffres, de <code>1</code> à <code>n</code>, en ordre. Par exemple, <code>générerListe(5)</code> retourne <code>[1, 2, 3, 4, 5]</code> Si tu éprouves des difficultés, retourne voir <a href="operations.html">le chapitre sur les opérations</a>.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example1" style="width:50%;display:none;">function générerListe(n) {
+	//ton code ici
+	return liste;
+}</textarea>
+                      <br><a id="exec1" class="button primary large">Exécuter</a>
+											<hr class="major" />
+											<p>
+                      	Complète la fonction <code>factoriel(n)</code>. Cette fonction doit prendre pour entrée un nombre <code>n</code> et retourner (<code>return</code>) un nombre. Le nombre quelle retourne doit correspondre à n! (n factoriel). Cette fonction mathématique, très utilisée en programmation retourne le produit de tous les chiffres plus petits ou égaux à n. Par exemple 5! = 5*4*3*2*1 = 120. Ainsi, <code>factoriel(5)</code> doit retourner <code>120</code>.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example2" style="width:50%;display:none;">function factoriel(n) {
+  //ton code ici
+	return n;
+}</textarea>
+                      <br><a id="exec2" class="button primary large">Exécuter</a>
+                    </div>
+                    </div>
+								</section>
+                <a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+                								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Les boucles dans le code[en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Building_blocks/Looping_code
+                								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+        let editor1 = CodeMirror.fromTextArea(document.getElementById('example1'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor1.setOption("theme", theme);
+        document.getElementById('exec1').addEventListener("click", () => {
+					try {
+						let code = editor1.getValue();
+						let addOnCode = `
+						function test(f) {
+							let c1 = f(5).length === 5;
+							let c2 = f(7)[6] === 7;
+							let c3 = f(9)[0] === 1;
+							if(c1 && c2 && c3)
+								return true;
+							return false;
+							}
+							if(test(générerListe)) {
+								handleSuccess(false);
+							} else {
+								handleFail();
+							}
+						`;
+            let fn = new Function(code + addOnCode);
+            fn();
+					}
+					catch(e) {
+						handleFail();
+					}
+        });
+			let editor2 = CodeMirror.fromTextArea(document.getElementById('example2'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor2.setOption("theme", theme);
+			document.getElementById('exec2').addEventListener("click", () => {
+				try {
+					let code = editor2.getValue();
+					let k = Math.sqrt(Math.sqrt(3)*4);
+					let addOnCode = `
+						if(factoriel(7) === 5040) {
+							handleSuccess();
+						} else {
+							handleFail();
+						}
+					`;
+					let fn = new Function(code + addOnCode);
+					fn();
+				}
+				catch(e) {
+					handleFail();
+				}
+			});
+      </script>
+
+	</body>
+</html>

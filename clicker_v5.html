@@ -1,0 +1,14 @@
+<html>
+	<h1>Votez pour Québec Solidaire!</h1>
+	<h2>Pour un Québec plus équitable</h2>
+	<img src="https://monmatane.com/wp-content/uploads/2019/05/Manon-678x381.png" onclick="clic()"/>
+	<p id="compteur">0</p>
+	<script>
+		let compteur = document.getElementById("compteur");
+		let total = 0;
+		function clic() {
+			total = total + 1;
+			compteur.innerHTML = total;
+		}
+	</script>
+</html>

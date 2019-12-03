@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Types de variables - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Types de variables</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+												<p>
+												Nous avons déjà vu, au chapitre précédent, qu’une variable peut contenir une valeur textuelle. C’est toutefois loin d’être le seul type de donnée que peut contenir une variable. Dans certains langages, la façon de déclarer une variable change en fonction de son type. Toutefois en JavaScript, la procédure reste la même. C’est une autre des raisons pour lesquelles ce langage est un bon point de départ.
+											  </p>
+												<p>
+												Dans le cadre de ce tutoriel nous verrons que les variables peuvent contenir 6 différents types de données : une chaîne de caractères, un nombre, une valeur booléenne, une fonction, une liste ou un objet.
+												</p>
+												<p>
+												Il en existe toutefois plusieurs autres, qui ne seront pas abordés lors de ce cours.
+												</p>
+												<p><b><u>
+												Chaîne de caractères
+											</u></b></p>
+												<p>
+												Commençons avec quelque chose de familier : les données textuelles. De manière formelle elles sont nommées <i>chaînes de caractères</i> ou <code>string</code> en anglais. Elles sont généralement dénotées avec des guillemets anglais (<code>""</code>) ou des apostrophes (<code>''</code>). Par exemple : <code>let nom = ‘John Doe’</code> ou <code>let nom = “John Doe”</code>.
+												</p>
+												<p>
+												Il existe aussi une troisième façon de dénoter les chaînes de caractère&nbsp;: avec le backtick (<code>``</code>). De cette façon il est possible d’inclure du code qui sera exécuté dans la chaîne. Tout ce qui est placé après un signe de dollar (<code>$</code>) et entre deux accolades (<code>{}</code>) sera exécuté. Par exemple, la chaîne <code>let équation = `${2+2}=4`;</code> deviendra <code>c“4=4”</code>.
+												</p>
+												<p><b><u>
+												Nombre
+											</u></b></p>
+												<p>
+												Un nombre peut être un chiffre, un entier négatif, un nombre décimal… En JavaScript, il sont dénotés sans symboles particuliers. Par exemple : <code>let pi = 3.14;</code>.
+												</p>
+												<div class="box">
+												<b>Attention!</b> Les nombres décimaux s’écrivent à l’anglaise avec un point et non à la Française avec une virgule.
+											</div>
+												<p>
+												La valeur d’une variable de type nombre peut aussi être <code>NaN</code>, qui signifie <i>Not A Number</i>, ou <code>Infinity</code> si le nombre est trop gros. Mais nous verrons ces deux autres valeurs plus en détail dans le chapitre sur les opérations.
+												</p>
+												<p><b><u>
+												Valeur booléenne
+											</u></b></p>
+												<p>
+												C’est peut-être le type de variable qui semble le plus compliqué, et pourtant c’est certainement l’un des plus simples. Il a seulement deux valeurs possibles. <code>true</code> (vrai) et <code>false</code> (faux). Comme les nombres, ce type de valeur ne nécessite pas de symbole syntaxique particulier.
+												</p>
+												<p>
+												Par exemple : <code>let assezÂgé = false;</code>.
+												</p>
+												<p><b><u>
+												Fonction
+											</u></b></p>
+												<p>
+												Une fonction est une forme de variable qui est en quelque sorte un sous-programme. Elle contient une série d’instructions qui peut prendre des données et en retourner d’autres. Il y a trois façons principales de les dénoter.
+												</p>
+												<p>
+												Premièrement, il est possible d’utiliser le mot-clé <code>function</code>. Une déclaration avec cette syntaxe doit suivre le modèle suivant :
+												</p>
+												<pre>
+												<code>let variable = function(arg1, arg2, arg3... ) {
+  //code
+}</code>
+												</pre>
+												<p>
+												En voici un exemple plus concret :
+											</p>
+											<pre>
+												<code>let message = function(nom, âge) {
+	const texte = `Tu t’appelles ${nom} et tu as ${âge} ans.`;
+	alert(texte);
+}</code>
+										</pre>
+												<p>
+												Deuxièmement, il est possible d’omettre la déclaration avec let et de nommer la fonction après le mot-clé <code>function</code>. Par exemple :
+											</p>
+											<pre>
+												<code>function message(nom, âge) {
+	let texte = `Tu t’appelles ${nom} et tu as ${âge} ans.`;
+	alert(texte);
+}</code></pre>
+												<p>
+												Finalement, il est possible de déclarer une fonction en utilisant une flèche (<code>=></code>). Cette méthode est la plus moderne et est de plus en plus courante. Elle est très similaire à la première forme, sauf que le mot-clé <code>function</code> est remplacé par <code>(arg1, arg2... ) =></code>. Par exemple :
+											</p>
+											<pre>
+												<code>let message = (nom, âge) => {
+	const texte = `Tu t’appelles ${nom} et tu as ${âge} ans.`;
+	alert(texte);
+}</code></pre>
+												<p>
+												Les trois syntaxes sont plus ou moins équivalentes et interchangeables. C’est une question de préférence personnelle. Dans les trois syntaxes, vous avez sûrement remarqué qu’il y a d’autres variables entre des parenthèses : <code>(nom, âge)</code>. C’est ce qu’on appelle des arguments. Ce sont les données qui sont fournies à la fonction. À l’intérieur de cette fonction, ils peuvent être traités comme des variables (tu en apprendras plus au cours du prochain chapitre). Dans l’exemple il y en avait deux, toutefois il aurait tout aussi bien pu n’en avoir aucun ou plus de deux.
+											</p>
+											<p>
+												La variable message en tant que telle n’est pas vraiment utile. Toutefois, il est possible d’utiliser la fonction que contient la variable avec une syntaxe particulière. Dans mon exemple, si je voulais afficher un message disant « Tu t’appelles John Doe et tu as 16 ans. », j’écrirais <code>message(“John Doe”, 16)</code>. Si la fonction n’avait pas eu d’arguments j’aurais simplement pu écrire <code>message()</code>.
+											</p>
+											<p>
+												Les fonctions peuvent aussi retourner une donnée lorsqu’elles sont exécutées, avec le mot-clé <code>return</code>. Par exemple :
+												</p>
+												<pre>
+													<code>let message = (nom, âge) => {
+	const texte = `Tu t’appelles ${nom} et tu as ${âge} ans.`;
+	return texte;
+}</code></pre>
+
+												<p>Exécuter <code>message(“John Doe”, 16)</code> retourne la valeur <code>“Tu t’appelles John Doe et tu as 16 ans.”</code>. Il est possible d’assigner cette valeur à une autre variable ou de l’afficher, par exemple avec <code>alert</code>.</p>
+												<div class="box">
+													Il est à noter que <code>return</code> arrête complètement l'exécution de la fonction. Donc tout ce qui se trouve après cette instruction ne sera jamais exécuté.
+												</div>
+												<p><b><u>
+												Liste
+											</u></b></p>
+												<p>
+												Les listes ou <code>Array</code> en anglais sont une collection de variables. Elles peuvent contenir n’importe quel type de variables : des nombres, des chaînes de caractères, des fonctions, d’autres listes… Elles se notent avec des crochets : <code>[]</code>). Par exemple : <code>let paysVisités = [“Mexique”, “France”, “Norvège”];</code>.
+											</p>
+											<p>
+												Pour accéder à un élément précis d’une liste, on utilise aussi les crochets. Par exemple : <code>paysVisités[1]</code>. Étrangement, cette instruction retourne la valeur <code>“France”</code>. C’est parce que la numérotation des listes commence à zéro et non à un.
+											</p>
+											<p>
+												Pour accéder à la longueur d’une liste, on utilise sa propriété <code>length</code>. Par exemple : <code>paysVisités.length</code> retourne <code>3</code>. C’est normal puisqu’il y a trois éléments.
+											</p>
+											<p>
+												Donc, pour accéder au dernier élément d’une liste, il faut accéder à l’élément dont l’index est un de moins que la longueur de la liste. Par exemple : <code>paysVisités[paysVisités.length - 1];</code> retourne <code>“Norvège”</code>.
+											</p>
+											<p><b><u>
+												Objet
+											</u></b></p>
+											<p>
+												Un objet, ou <code>object</code> en anglais, est très similaire à une liste. C’est aussi une collection de données. Toutefois, ces données ne sont pas classées selon un index numérique, mais plutôt avec des noms. De plus les objets sont délimités par des accolades (<code>{}</code>) et non des crochets (<code>[]</code>). À l'intérieur de l'objet, les données sont associées à un nom avec deux points (<code>:</code>) et sont séparées par des virgules. Par exemple :
+											</p>
+											<pre>
+											<code>let informations = {
+	nom: “John Doe”,
+	dateDeNaissance: “8 décembre 2019”,
+	filmPréféré: “Pulp Fiction”
+}</code></pre>
+
+												<div class='box'>
+													<b>Attention!</b> Il ne faut pas mettre de virgule après le dernier élément de l'objet.
+												</div>
+												 <p>
+												Comme avec les listes, on peut utiliser les crochets (<code>[]</code>) pour accéder à un élément précis de l’objet. Cette fois-ci toutefois, on n’utilise pas un index, mais plutôt le nom, sous forme de chaîne de caractères<sup>1</sup>. Par exemple : <code>informations[“filmPréféré”]</code> retourne <code>“Pulp Fiction”</code>.
+											</p>
+												<p>
+												Il est aussi possible d’accéder à une valeur particulière avec un point. Par exemple, <code>informations.nom</code> retournera <code>“John Doe”</code>.
+											</p>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      Les blocs de code ci-dessous ne fonctionnent pas. Essaie de trouver les erreurs et de les corriger.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example1" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec1" class="button primary large">Exécuter</a>
+                      <hr class="major" />
+                      <textarea id="example2" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec2" class="button primary large">Exécuter</a><br><br>
+											<div class="box">
+												La deuxième ligne peut paraître un peu étrange. Mathématiquement, une telle syntaxe est impossible. Mais en programmation, c'est l'équivalent de rajouter 1 à la variable température. On assigne à la variable sa valeur plus 1.
+											</div>
+											<hr class="major" />
+                      <textarea id="example3" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec3" class="button primary large">Exécuter</a>
+											<hr class="major" />
+                      <textarea id="example4" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec4" class="button primary large">Exécuter</a><br><br>
+											<div class='box'>Tu as déjà vu l'utilité de <code>alert</code>. Il permet d'afficher des données. De son côté, <code>prompt</code> permet de demander des données à l'utilisateur. Cette fonction retourne la valeur entrée par l'utilisateur. Il est donc possible de la stocker dans une variable ou de l'utiliser comme donnée dans une fonction.</div>
+											<hr class="major" />
+											<textarea id="example5" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec5" class="button primary large">Exécuter</a>
+											<hr class="major" />
+											<textarea id="example6" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec6" class="button primary large">Exécuter</a>
+                    </div>
+                    </div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Structures de données [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Structures_de_donn%C3%A9es
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+			const preCode1 = `let mois = 'Janvier;
+let sport = "karaté";
+let date = \`21 \${mois}\` 2019;
+let langue = anglais;`;
+		document.getElementById('example1').value = preCode1;
+				let editor1 = CodeMirror.fromTextArea(document.getElementById('example1'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor1.setOption("theme", theme);
+        document.getElementById('exec1').addEventListener("click", () => {
+            let code = editor1.getValue();
+						let fn;
+            try {
+							fn = new Function(code);
+							fn();
+						}
+						catch(e) {
+							handleFail();
+						}
+						if(typeof fn === "function")
+							handleSuccess(false);
+        });
+				const preCode2 = `let température = 19,1;
+température = température + "1";`;
+			document.getElementById('example2').innerHTML = preCode2;
+			let editor2 = CodeMirror.fromTextArea(document.getElementById('example2'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor2.setOption("theme", theme);
+			document.getElementById('exec2').addEventListener("click", () => {
+				let code = editor2.getValue();
+				let fn;
+				try {
+					fn = new Function(code);
+					fn();
+				}
+				catch(e) {
+					handleFail();
+				}
+				if(typeof fn === "function")
+					handleSuccess(false);
+			});
+			const preCode3 = `let membreVIP = {Faux};
+let utilisateurConnecté = {Vrai};`;
+		document.getElementById('example3').innerHTML = preCode3;
+		let editor3 = CodeMirror.fromTextArea(document.getElementById('example3'), {
+			lineNumbers: true,
+			styleActiveLine: false,
+			matchBrackets: true
+		});
+		editor3.setOption("theme", theme);
+		document.getElementById('exec3').addEventListener("click", () => {
+			let code = editor3.getValue();
+			let fn;
+			let ran = true;
+			try {
+				fn = new Function(code);
+				fn();
+			}
+			catch(e) {
+				handleFail();
+				ran = false;
+			}
+			if(ran)
+				handleSuccess(false);
+		});
+		const preCode4 = `let fonction = fonction devinerÂge(annéeDeNaissance) => {
+	const annéeEnCours = ${(new Date()).getFullYear()};
+	alert(\`Tu as \${annéeEnCours - annéeDeNaissance} ans\`);
+	alert(\`Ou tu as \${annéeEnCours - annéeDeNaissance - 1} ans\`);
+}
+devinerÂge(Number(prompt('Quelle est ton année de naissance?')));`;
+	document.getElementById('example4').innerHTML = preCode4;
+	let editor4 = CodeMirror.fromTextArea(document.getElementById('example4'), {
+		lineNumbers: true,
+		styleActiveLine: false,
+		matchBrackets: true
+	});
+	editor4.setOption("theme", theme);
+	document.getElementById('exec4').addEventListener("click", () => {
+		let code = editor4.getValue();
+		let fn;
+		let ran = true;
+		try {
+			fn = new Function(code);
+			fn();
+		}
+		catch(e) {
+			handleFail();
+			ran = false;
+		}
+		if(ran)
+			handleSuccess(false);
+	});
+	const preCode5 = `let filmsPréférés = {The Shining, Inception, A Clockwork Orange, Psycho};
+alert(\`Mon quatrième film préféré est \${filmsPréférés(4)}\`)
+	`;
+document.getElementById('example5').innerHTML = preCode5;
+let editor5 = CodeMirror.fromTextArea(document.getElementById('example5'), {
+	lineNumbers: true,
+	styleActiveLine: false,
+	matchBrackets: true
+});
+editor5.setOption("theme", theme);
+document.getElementById('exec5').addEventListener("click", () => {
+	let code = editor5.getValue();
+	let fn;
+	let ran = true;
+	try {
+		fn = new Function(code);
+		fn();
+	}
+	catch(e) {
+		handleFail();
+		ran = false;
+	}
+	if(ran && code.indexOf('filmsPréférés[4]') === -1)
+		handleSuccess(false);
+	if(code.indexOf('filmsPréférés[4]') !== -1)
+		handleFail();
+});
+const preCode6 = `let informations = [
+	nom = John Doe;
+	dateDeNaissance = 8 décembre 2019;
+	filmPréféré = Pulp Fiction;
+]
+alert(\`Mon film préféré est \${informations.[filmPréféré]}\`)`;
+document.getElementById('example6').innerHTML = preCode6;
+let editor6 = CodeMirror.fromTextArea(document.getElementById('example6'), {
+lineNumbers: true,
+styleActiveLine: false,
+matchBrackets: true
+});
+editor6.setOption("theme", theme);
+document.getElementById('exec6').addEventListener("click", () => {
+let code = editor6.getValue();
+let fn;
+let ran = true;
+try {
+	fn = new Function(code);
+	fn();
+}
+catch(e) {
+	handleFail();
+	ran = false;
+}
+if(ran)
+	handleSuccess();
+});
+      </script>
+
+	</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Premier projet - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Premier projet - Deviner le nombre</h1>
+									</header>
+<p>
+Maintenant que tu as vu les bases de la programmation en JavaScript, tu peux te lancer dans la création de projets.
+</p><p>
+Toutefois, tu peux avoir l’impression de ne pas en connaître beaucoup sur les différentes façons d’interagir avec un utilisateur quelconque. Tu comprends probablement un programme fonctionne, mais tu te demandes encore comment réaliser un programme qui est un tant soit peu interactif.
+</p><p>
+Ce projet te permettra de te familiariser avec ce type d’interaction, en utilisant seulement deux fonctions que tu as déjà vues dans les exemples des pages précédentes : <code>alert()</code> et <code>prompt()</code>.
+</p><p>
+Tu te souviens peut-être que la première permet d’afficher du texte dans une boîte de dialogue et que la deuxième permet de demander à l’utilisateur de fournir du texte.
+</p><p>
+Ces deux fonctions nous permettront de programmer un jeu tout simple, auquel tu as probablement déjà joué enfant : deviner un nombre. Quelqu’un (dans notre cas, l’ordinateur), pense à un nombre, inclus dans un certain intervalle et un autre joueur essaie de deviner de quel nombre il s’agit. À chaque essai du deuxième joueur, l’ordinateur dit si le nombre auquel il pense est plus petit ou plus gros que le nombre entré.
+</p><p>
+Pour mieux comprendre, tu peux essayer d’y jouer par toi même :
+</p><a onclick="game()" class="button primary large">Essayer le jeu</a><br><br>
+<p>
+Essayons de reproduire ce programme étape par étape. Premièrement, le programme affiche une boîte de dialogue qui explique brièvement les consignes du jeu. C’est possible avec la fonction <code>alert</code>. La première ligne du problème serait donc :
+</p><textarea>alert("Essaie de deviner à quel nombre je pense");</textarea>
+<p>
+Rien de bien complexe jusqu’à maintenant. La prochaine boîte de dialogue demande au joueur de faire un essai. D’autres choses se produisent par contre dans le programme avant d’arriver à cette étape. Premièrement, l’ordinateur doit choisir un nombre. Évidemment l’ordinateur n’a pas de conscience propre, il ne peut donc pas réellement choisir.
+</p><p>
+Toutefois, si tu te rappelles un peu du chapitre sur les opérations, nous avions parlé d'une fonction de l’objet <code>Math</code> qui permettait de générer un nombre aléatoire entre 0 et 1.
+</p><p>
+C’est un bon départ. Cependant, le jeu serait moins amusant avec un nombre décimal entre 0 et 1. Il faut donc modifier la valeur aléatoire, pour qu’elle soit plus propice à notre jeu.
+</p><p>
+Commençons par augmenter cette valeur aléatoire. Il est possible d’y arriver en multipliant cette valeur, par exemple, par 100. De cette façon, la valeur se situera entre 0 et 100.
+</p><p>
+Un problème demeure toutefois, cette valeur est une valeur décimale. Tâchons donc de l’arrondir. La fonction <code>Math.ceil()</code> permet d’arrondir à l’entier supérieur, ce qui est parfait pour notre jeu. Modifions maintenant le code pour qu’il inclut cette nouvelle variable <code>nombre</code>, ainsi que les modifications qu’elle subit :
+</p><textarea>alert("Essaie de deviner à quel nombre je pense");
+
+let nombre = Math.random(); //valeur décimale entre 0 et 1
+nombre = nombre*100; //valeur décimale entre 0 et 100
+nombre = Math.ceil(nombre); //valeur entière entre 0 et 100</textarea>
+<p>
+Il est toutefois possible de rendre ce code plus compact, en incluant les modifications dès la déclaration de la variable :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);</textarea>
+<p>
+L’ordinateur a donc maintenant « choisi » un nombre. Nous pouvons maintenant commencer à gérer les essais du joueur. Commençons par simplement déclarer la variable <code>essai</code>, qui correspond à l’essai de l’utilisateur :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;</textarea>
+<p>
+De cette façon, la variable essai sera globale.
+</p><p>
+Vous avez probablement pu remarquer que le processus d’essai se répète très souvent. Il est donc très plausible que le programme inclut une boucle. Le seul problème est que le nombre d’essais est variable. Ce n’est pas un problème. Même si la plupart des exercices sur les boucles fonctionnaient avec un nombre précis de répétitions, il est aussi possible de définir une autre condition d’arrêt de la boucle.
+</p><p>
+Dans notre cas, il faut réfléchir au moment où nous voulons que le jeu prenne fin. Logiquement, il devrait prendre fin lorsque l’essai de l’utilisateur correspond exactement au nombre choisi par l’ordinateur.
+</p><p>
+Cette condition de fin peut s’exprimer en JavaScript de la manière suivante : <code>essai === nombre</code>. Toutefois nous voulons que la boucle continue tant que cette expression est évaluée à <code>false</code>. Il faut donc l’inverser :  <code>essai !== nombre</code>. Intégrons maintenant une boucle avec cette condition d’arrêt dans notre code :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;
+
+for(let i = 1; essai !== nombre; i++) {
+//code ici
+}</textarea>
+<p>
+Intéressons-nous maintenant au code qui ira à l’intérieur de la boucle. Premièrement, il faut demander au joueur d’essayer de deviner. C’est possible avec la fonction <code>prompt</code>. Cette fonction prend pour argument le texte qui sera affiché à l’utilisateur, juste en haut de l’espace pour inscrire son essai. Dans le programme du début, chaque essai était numéroté. Par exemple, la fenêtre de dialogue pour le premier essai était accompagnée du texte <code>"Essai #1"</code>.
+</p><p>
+Ce numéro d’essai correspond à la variable <code>i</code>. Il est donc possible d’utiliser une chaîne de caractère avec les <i>backticks</i> pour générer ce texte : <code>`Essai #${i}`</code>.
+</p><p>
+Assignons maintenant la valeur retournée par cette boîte de dialogue à la variable <code>essai</code> :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;
+
+for(let i = 1; essai !== nombre; i++) {
+	essai = prompt(`Essai #${i}`);
+}</textarea>
+<p>
+Un problème demeure toutefois : la valeur retournée par <code>prompt</code> est une chaîne de caractères. Elle ne pourra par conséquent pas être comparée à notre variable <code>nombre</code>. Il faut donc la convertir en un nombre. C’est possible avec la fonction <code>Number</code> :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;
+
+for(let i = 1; essai !== nombre; i++) {
+	essai = Number(prompt(`Essai #${i}`));
+}</textarea><p>
+<p>
+Maintenant que nous avons l’essai du joueur, nous pouvons le comparer à la variable <code>nombre</code>. Cette comparaison pourrait se faire avec un si/sinon, afin d’afficher un message différent dépendamment du résultat de la comparaison. Commençons par vérifier si <code>nombre</code> est égal à <code>essai</code>. Si c’est le cas, le jeu est terminé, on peut donc afficher un message de félicitations :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;
+
+for(let i = 1; essai !== nombre; i++) {
+	essai = Number(prompt(`Essai #${i}`));
+	if(essai === nombre) {
+		alert("Bravo! Tu as deviné à quel nombre je pensais.");
+	}
+}</textarea>
+<p>
+Maintenant, si <code>essai</code> est inférieur à <code>nombre</code>, nous pouvons afficher au joueur un message disant que le nombre auquel pense l’ordinateur est plus gros. Nous pouvons ajouter cet élément avec <code>else if</code> :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;
+
+for(let i = 1; essai !== nombre; i++) {
+	essai = Number(prompt(`Essai #${i}`));
+	if(essai === nombre) {
+		alert("Bravo! Tu as deviné à quel nombre je pensais.");
+	} else if (essai < nombre) {
+		alert("Le nombre auquel je pense est plus gros");
+	}
+}</textarea>
+<p>
+Finalement, si <code>essai</code> n’est ni égal ni plus plus petit que <code>nombre</code>, nous pouvons assumer qu’il est plus grand. Nous pouvons donc afficher un message disant que le nombre est plus petit dans le <code>else</code> :
+</p>
+<textarea>alert("Essaie de deviner à quel nombre je pense");
+
+//valeur entière entre 0 et 100
+let nombre = Math.ceil(Math.random()*100);
+
+let essai;
+
+for(let i = 1; essai !== nombre; i++) {
+	essai = Number(prompt(`Essai #${i}`));
+	if(essai === nombre) {
+		alert("Bravo! Tu as deviné à quel nombre je pensais.");
+	} else if (essai < nombre) {
+		alert("Le nombre auquel je pense est plus gros");
+	} else {
+		alert("Le nombre auquel je pense est plus petit");
+	}
+}</textarea>
+<p>
+Le programme est maintenant fonctionnel! Nous pouvons toutefois l’améliorer un peu. Par exemple, nous pourrions l’inclure dans une fonction :
+</p>
+<textarea>function devinerNombre() {
+	alert("Essaie de deviner à quel nombre je pense");
+
+	//valeur entière entre 0 et 100
+	let nombre = Math.ceil(Math.random()*100);
+
+	let essai;
+
+	for(let i = 1; essai !== nombre; i++) {
+		essai = Number(prompt(`Essai #${i}`));
+		if(essai === nombre) {
+			alert("Bravo! Tu as deviné à quel nombre je pensais.");
+		} else if (essai < nombre) {
+			alert("Le nombre auquel je pense est plus gros");
+		} else {
+			alert("Le nombre auquel je pense est plus petit");
+		}
+	}
+}</textarea>
+<p>
+Une telle manipulation peut paraître inutile, elle permet toutefois plus de flexibilité. Par exemple, nous pourrions laisser l’utilisateur choisir lui-même dans quel intervalle doit se situer le nombre, afin de faire varier la difficulté :
+</p>
+<textarea>function devinerNombre(max) {
+	alert("Essaie de deviner à quel nombre je pense");
+
+	//valeur entière entre 0 et 100
+	let nombre = Math.ceil(Math.random()*max);
+
+	let essai;
+
+	for(let i = 1; essai !== nombre; i++) {
+		essai = Number(prompt(`Essai #${i}`));
+		if(essai === nombre) {
+			alert("Bravo! Tu as deviné à quel nombre je pensais.");
+		} else if (essai < nombre) {
+			alert("Le nombre auquel je pense est plus gros");
+		} else {
+			alert("Le nombre auquel je pense est plus petit");
+		}
+	}
+}
+
+let max = prompt("Je vais choisir un nombre. Jusqu’à quel nombre puis-je aller?");
+max = Number(max);
+
+devinerNombre(max);</textarea>
+<a onclick="exec()" class="button primary large">Exécuter</a><br><br>
+<p>
+Bien sûr, ce programme peut encore être amélioré. Sers-toi de ta créativité pour rendre le jeu encore plus intéressant!
+</p>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+			function game() {
+				alert("Essaie de deviner à quel nombre je pense")
+				let nombre = Math.random();
+				nombre = Math.ceil(nombre*100)
+				let essai
+				for(let i = 1; essai !== nombre; i++) {
+						essai = Number(prompt(`Essai #${i}`));
+						if(essai === nombre) {
+								alert("Bravo! Tu as deviné à quel nombre je pensais.");
+						} else if (essai < nombre) {
+								alert("Le nombre auquel je pense est plus gros");
+						} else {
+								alert("Le nombre auquel je pense est plus petit");
+						}
+				}
+			}
+			let txtArea = Array.from(document.getElementsByTagName("textarea"));
+			txtArea.forEach((el, i) => {
+				if (i !== txtArea.length-1) {
+					let editor = CodeMirror.fromTextArea(el, {
+	          lineNumbers: true,
+	          styleActiveLine: false,
+	          matchBrackets: true
+	        });
+	        const theme = 'cobalt';
+	        editor.setOption("theme", theme);
+				}
+			});
+			let editor = CodeMirror.fromTextArea(txtArea[txtArea.length-1], {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			const theme = 'cobalt';
+			editor.setOption("theme", theme);
+			function exec() {
+				let code = editor.getValue();
+				let fn = new Function(code);
+				fn();
+			}
+			Array.from(document.getElementsByClassName('CodeMirror')).forEach(el => {
+				el.style.width = '100%';
+				el.style.height = '40em';
+				el.parentNode.insertBefore(document.createElement("br"), el.nextSibling);
+			});
+      </script>
+
+	</body>
+</html>

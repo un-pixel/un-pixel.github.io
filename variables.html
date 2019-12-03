@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Déclaration de variables - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Déclaration d'une variable</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+                      <p>
+                        Tout comme en mathématiques, le concept de « variables » est très présent en programmation. Une variable sert à désigner une donnée (nombre, texte... ), tout comme ton nom permet de te désigner. Par exemple, je pourrais assigner la valeur ‘25 octobre 2002’ à la variable <code>dateDeNaissance</code>.
+                      </p>
+											<div class="box">
+												Remarque la manière dont est notée la variable <code>dateDeNaissance</code>. C'est la manière standard de nommer les variables en Javascript. Cette écriture se nomme camelCase. Il existe toutefois d'autres standards comme snake_case (<code>date_de_naissance</code>). Au final ça a peu d'importance. L'important est de rester cohérent et de garder en tête que Javascript est sensible aux majuscules et aux accents. La variable <code>DateDeNaissance</code> est donc tout à fait différente de la variable <code>dateDeNaissance</code>.
+											</div>
+                      <p>
+                        En JavaScript, ce processus est assez simple. Il suffit d’écrire <code>let dateDeNaissance = “25 octobre 2002”;</code>.
+                      Le mot-clé <code>let</code> peut te sembler abstrait. C’est normal. En mathématiques, il suffit d’écrire, par exemple, <code>x = 7</code>. C’est aussi possible en Javascript : ce mot-clé peut ne pas être mis. Par contre, nous verrons un peu plus tard que c’est généralement une mauvaise idée.
+                      </p>
+											<div class="box">
+                        <b>Attention</b>, lorsque la valeur d'une variable est sous forme de texte, il faut le déclarer en utilisant les guillemets anglais (""). Une suite de caractères sans guillemets fait plutôt référence à une autre variable.
+                      </div>
+                      <p>
+                        Une autre différence avec les mathématiques est qu’une variable peut changer de valeur. En effet, une fois la variable déclarée avec <code>let</code>, il est possible de modifier sa valeur, en lui assignant une nouvelle donnée, sans mot-clé. Par exemple :
+                      </p>
+                      <pre>
+                        <code>let x = 8;
+//présentement la valeur de x est de 8
+x = 7;
+//maintenant la valeur de x est de 7</code>
+                      </pre>
+                      <p>
+                        Toutefois, dans certains cas il est préférable d’empêcher qu’une variable puisse changer de valeur. C’est dans ces cas que le mot-clé <code>const</code> est utilisé. Par exemple, si je déclare <code>const x = 8;</code>, la valeur de x ne pourra plus être altérée. <code>x = 7</code> produirait simplement une erreur.
+                      </p>
+                      <div class="box">
+                        Un autre mot-clé existe pour déclarer une variable : <code>var</code>. Celui-ci est toutefois de moins en moins utilisé, remplacé par <code>let</code>, qui a essentiellement la même fonction.<sup>1</sup>
+                      </div>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      C'est maintenant à toi de jouer! Commence par assigner la valeur "brun" à la variable <code>maCouleurPréférée</code>. Ensuite, sur une autre ligne, assignes-y ta vraie couleur préférée.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example1" style="width:50%;display:none;">//bonne chance! (ceci est un commentaire d'une seule ligne)
+//les commentaires ne sont pas pris en compte par l'ordinateur
+//ils ne servent qu'à rendre la compréhension humaine plus facile
+//les commentaires d'une ligne sont indiqués par deux barres obliques (//)
+//alors que les commentaires qui s'étendent sur plusieurs lignes
+//sont délimités par /* et */
+//par exemple :
+/*
+un commentaire peut aussi
+s'étendre sur plusieurs lignes
+*/</textarea>
+                      <br><a id="exec1" class="button primary large">Exécuter</a>
+											<br><br><div class='box'>Ne porte pas attention aux commentaires. Tu peux même les effacer puisque l'ordinateur les ignore simplement.</div>
+											<hr class="major" />
+											<p>
+                      Le code ci-dessous produit une erreur. Essaie de la trouver et de la corriger.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example2" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec2" class="button primary large">Exécuter</a><br><br>
+                    </div>
+                    </div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Types et grammaire [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Types_et_grammaire
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+        let editor1 = CodeMirror.fromTextArea(document.getElementById('example1'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor1.setOption("theme", theme);
+        document.getElementById('exec1').addEventListener("click", () => {
+            let code = editor1.getValue();
+						let addOnCode = `
+							if(typeof maCouleurPréférée === 'string') {
+								handleSuccess(false);
+							} else {
+								handleFail();
+							}
+						`;
+            let fn = new Function(code + addOnCode);
+            fn();
+        });
+				const preCode = `const monGroupePréféré = "Nirvana";
+alert("Mon groupe préféré est " + monGroupePréféré);
+monGroupePréféré = "Pink Floyd";
+alert("Maintenant, mon groupe préféré est " + monGroupePréféré);`;
+			document.getElementById('example2').value = preCode;
+			let editor2 = CodeMirror.fromTextArea(document.getElementById('example2'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor2.setOption("theme", theme);
+			document.getElementById('exec2').addEventListener("click", () => {
+					let code = editor2.getValue();
+					let fn = new Function(code);
+					fn();
+					if(code.indexOf('const') === -1) {
+						handleSuccess();
+					} else {
+						handleFail();
+					}
+			});
+      </script>
+
+	</body>
+</html>

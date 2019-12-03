@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Deuxième projet - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Deuxième projet - Clone de <i>Cookie Clicker</i></h1>
+									</header>
+									<p>
+									Dans le projet précédent, vous avez pu vous familiariser avec la conception de programme interactif. Votre créativité était toutefois assez limitée… En effet, les fonctions <code>prompt</code> et <code>alert</code> ne permettent d’interagir que par l’entremise de texte.
+								  </p><p>
+									Il n’était même pas possible d’insérer des couleurs ou des images. Dans ce projet-ci par contre, vous pourrez donner libre cours à votre créativité. En effet, nous allons mettre de côté les boîtes de dialogues, pour plutôt nous attaquer à la création de pages web.
+								  </p><p>
+									La page web que nous allons réaliser sera inspirée d’un jeu qui fut assez populaire : <a href='https://orteil.dashnet.org/cookieclicker/' target="_blank"><b>Cookie Clicker</b></a>. Le principe de ce jeu est bien simple : cliquer le biscuit permet d’amasser d’autres biscuits et le but est d’amasser le plus de biscuits possible.
+								  </p><p>
+									Malgré sa simplicité enfantine, ce jeu a connu un très grand succès au milieu de la décennie. Comme quoi une idée simple peut faire beaucoup de chemin. Imaginez simplement si ce projet portait un message, par exemple si chaque clic sur le biscuit équivalait à un don pour une association contre la famine.
+								  </p><p>
+									L’impact que ça aurait eu est immense.  Essayons donc de faire notre propre version de ce jeu, potentiellement avec un message. Pour ma part, je vais créer une page web qui permet de sensibiliser à la campagne du parti Québec Solidaire, tout en conservant le principe originel de <i><b>Cookie Clicker</b></i>. Tu peux cependant faire ta propre version en suivant le tutoriel. Laisse libre cours à ta créativité!
+								  </p><p>
+									Une page web est structurée grâce au langage HTML. Pour créer une page web, il faut donc avoir un fichier HTML. Ce type de fichier peut être édité avec n’importe quel éditeur de texte. Tu peux même l’éditer en ligne (<a href="https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_default" target="_blank">ici par exemple</a>).
+								  </p><p>
+									Un fichier HTML est structuré avec des balises. Les balises délimitent les sections de la page. Par exemple, une page commence avec la balise ouvrante <code>&lt;html></code> et se termine avec la balise <code>&lt;/html></code>.
+								  </p><p>
+									Un titre est balisé avec <code>&lt;h1></code> et <code>&lt;/h1></code> (h1 est un titre, mais h2, h3 et ainsi de suite le sont aussi. h1 est simplement le plus gros).
+								  </p><p>
+									Un paragraphe est balisé avec <code>&lt;p></code> et <code>&lt;/p></code>.
+								  </p><p>
+									Pour une image c’est un peu différent. Puisqu’elle ne peut pas contenir de texte, sa balise se ferme sur elle-même : <code>&lt;img /></code>
+								  </p><p>
+									Le code JavaScript quant à lui est balisé avec <code>&lt;script></code> et <code>&lt;/script></code>.
+								  </p><p>
+									Il existe plusieurs autres balises HTML, mais nous nous concentrerons surtout sur celles-ci pour ce tutoriel. Commençons par utiliser ces nouvelles connaissances pour créer la structure de base de notre page web :
+								  </p>
+<textarea>&lt;html>
+	&lt;h1>&lt;/h1>
+	&lt;h2>&lt;/h2>
+	<img />
+&lt;/html>
+</textarea>
+<p><a href="clicker_v1.html" target="_blank">Voir le résultat</a></p>
+<p>
+Si vous suivez le tutoriel avec un éditeur de code, vous voyez que la page est toujours vide. C'est normal, ceci n'est que la structure de notre page, il reste à ajouter du contenu.
+</p>
+<p>
+Ajoutons donc un titre, un sous-titre et ajoutons une image. Pour le titre et le sous-titre, il suffit d'écrire entre les balises h1 et h2. Pour l'image, il faudra ajouter un attribut à l'élément img. Un attribut est en quelque sorte une caractéristique de l'élément. Dans ce cas nous voulons ajouter une source à l'image. Il faut donc ajouter l'attribut <code>src</code> et lui donner une url pointant vers une image :
+</p>
+<textarea>&lt;html>
+	&lt;h1>Votez pour Québec Solidaire!&lt;/h1>
+	&lt;h2>Pour un Québec plus équitable&lt;/h2>
+	<img src="https://monmatane.com/wp-content/uploads/2019/05/Manon-678x381.png"/>
+&lt;/html>
+</textarea>
+<p><a href="clicker_v2.html" target="_blank">Voir le résultat</a></p>
+
+<p>Ça ressemble déjà un peu plus à une page web. Le design ne semble vraiment pas très moderne, mais ce n'est qu'un protoype! Ajoutons maintenant les éléments interactifs. À chaque fois que l'utilisateur clique sur l'image, nous devons ajouter 1 à un compteur. Il est possible d'exécuter une fonction lors d'un clic avec l'attribut <code>onclick</code>. Ajoutons donc cet attribut, un élément script et une fonction vide :</p>
+<textarea>&lt;html>
+	&lt;h1>Votez pour Québec Solidaire!&lt;/h1>
+	&lt;h2>Pour un Québec plus équitable&lt;/h2>
+	&lt;img src="https://monmatane.com/wp-content/uploads/2019/05/Manon-678x381.png" onclick="clic()"/>
+	&lt;script>
+		function clic() {
+			//code ici
+		}
+	&lt;/script>
+&lt;/html></textarea>
+<p><a href="clicker_v3.html" target="_blank">Voir le résultat</a></p>
+
+<p>Pour l'instant rien ne se produit lorsque l'on appuie sur l'image : c'est normal, la fonction est vide. Ajoutons donc un compteur et essayons de le modifier avec JavaScript. Pour que JavaScript puisse accéder à un élément, il faut utiliser un système d'identification. L'attribut <code>id</code> a exactement cette fonction. Par la suite, il est possible d'y accéder par JavaScript avec la fonction suivante : <code>document.getElementById(id)</code>. Cette fonction retourne un objet, dont la propriété <code>innerHTML</code> correspond au texte contenu dans l'élément. Utilisons ces nouvelles connaissances dans notre code :</p>
+<textarea>&lt;html>
+	&lt;h1>Votez pour Québec Solidaire!&lt;/h1>
+	&lt;h2>Pour un Québec plus équitable&lt;/h2>
+	&lt;img src="https://monmatane.com/wp-content/uploads/2019/05/Manon-678x381.png" onclick="clic()"/>
+	&lt;p id="compteur">&lt;/p>
+	&lt;script>
+		let compteur = document.getElementById("compteur");
+		function clic() {
+			compteur.innerHTML = "L'image a été cliquée";
+		}
+	&lt;/script>
+&lt;/html></textarea>
+<p><a href="clicker_v4.html" target="_blank">Voir le résultat</a></p>
+<p>Il y a enfin de l'interaction entre la page et le script! C'est un début. Si nous voulons avoir un compteur, c'est assez simple. Le plus dur est déjà fait. Il suffit de déclarer une variable (<code>total</code> par exemple), dont la valeur augmente de 1 à chaque fois que l'image est cliquée. Ne reste plus qu'à affecter la valeur de <code>total</code> à <code>compteur.innerHTML</code> :</p>
+<textarea>&lt;html>
+	&lt;h1>Votez pour Québec Solidaire!&lt;/h1>
+	&lt;h2>Pour un Québec plus équitable&lt;/h2>
+	&lt;img src="https://monmatane.com/wp-content/uploads/2019/05/Manon-678x381.png" onclick="clic()"/>
+	&lt;p id="compteur">0&lt;/p>
+	&lt;script>
+		let compteur = document.getElementById("compteur");
+		let total = 0;
+		function clic() {
+			total = total + 1;
+			compteur.innerHTML = total;
+		}
+	&lt;/script>
+&lt;/html></textarea>
+<p><a href="clicker_v5.html" target="_blank">Voir le résultat</a></p>
+<p>Ça fonctionne! Le compteur augmente de 1 à chaque clic. Le compteur semble toutefois vide de sens. Pourquoi ne pas associer le compteur à la valeur d'un don à Québec Solidaire. Par exemple, pour 5 clics, l'utilisateur pourrait faire un don de 5$ à Québec Solidaire. Rajoutons ces modifications :</p>
+<textarea>&lt;html>
+	&lt;h1>Votez pour Québec Solidaire!&lt;/h1>
+	&lt;h2>Pour un Québec plus équitable&lt;/h2>
+	&lt;img src="https://monmatane.com/wp-content/uploads/2019/05/Manon-678x381.png" onclick="clic()"/>
+	&lt;p id="compteur">Pourquoi ne pas faire un don de 0$ à Québec Solidaire?&lt;/p>
+	&lt;script>
+		let compteur = document.getElementById("compteur");
+		let total = 0;
+		function clic() {
+			total = total + 1;
+			compteur.innerHTML = `Pourquoi ne pas faire un don de ${total}$ à Québec Solidaire?`;
+		}
+	&lt;/script>
+&lt;/html></textarea>
+<p><a href="clicker_v6.html" target="_blank">Voir le résultat</a></p>
+
+<p>Voilà! Je pense que c'est assez satisfaisant pour une première page web. Évidemment, nous aurions pu rajouter plusieurs autres éléments. Nous aurions par exemple pu modifier la couleur de la page, ou encore fait en sorte que le sous-titre change à chaque clic, pour énoncer une autre raison de voter pour Québec Solidaire... Tu peux faire ce que tu veux, puisqu'il n'y a aucune limite en programmation. Rien ne peut brimer ta créativité.</p>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/htmlmixed.js"></script>
+      <script>
+			function game() {
+				alert("Essaie de deviner à quel nombre je pense")
+				let nombre = Math.random();
+				nombre = Math.ceil(nombre*100)
+				let essai
+				for(let i = 1; essai !== nombre; i++) {
+						essai = Number(prompt(`Essai #${i}`));
+						if(essai === nombre) {
+								alert("Bravo! Tu as deviné à quel nombre je pensais.");
+						} else if (essai < nombre) {
+								alert("Le nombre auquel je pense est plus gros");
+						} else {
+								alert("Le nombre auquel je pense est plus petit");
+						}
+				}
+			}
+			let txtArea = Array.from(document.getElementsByTagName("textarea"));
+			txtArea.forEach((el, i) => {
+				if (i !== txtArea.length-1) {
+					let editor = CodeMirror.fromTextArea(el, {
+	          lineNumbers: true,
+	          styleActiveLine: false,
+	          matchBrackets: true
+	        });
+	        const theme = 'cobalt';
+	        editor.setOption("theme", theme);
+				}
+			});
+			let editor = CodeMirror.fromTextArea(txtArea[txtArea.length-1], {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			const theme = 'cobalt';
+			editor.setOption("theme", theme);
+			function exec() {
+				let code = editor.getValue();
+				let fn = new Function(code);
+				fn();
+			}
+			Array.from(document.getElementsByClassName('CodeMirror')).forEach(el => {
+				el.style.width = '100%';
+				el.style.height = '40em';
+				el.parentNode.insertBefore(document.createElement("br"), el.nextSibling);
+			});
+      </script>
+
+	</body>
+</html>

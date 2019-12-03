@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Portée d'une variables - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Portée d'une variable</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+												<p>
+													La portée d’une variable correspond à l’étendue de code sur laquelle elle est accessible. Certaines variables sont globales. C’est-à-dire qu’il est possible d’y accéder à partir de n’importe où dans le code.
+												</p>
+												<p>
+													D’autres variables sont locales. C’est-à-dire qu’il est seulement possible d’y accéder à partir d’une section précise du code.
+											  </p>
+												<p>
+													En général, la portée d’une variable se situe entre les accolades les plus proches. Par exemple si une variable est déclarée à l’intérieur d’une fonction, elle ne sera pas accessible à l’extérieur de celle-ci. On parle alors d’une variable locale.
+											  </p>
+												<p>
+													Si nous voulions que cette variable soit accessible à l’extérieur de la fonction, il faudrait la déclarer à l’extérieur ou simplement ne pas la déclarer (donc simplement y assigner une valeur, sans mot-clé comme <code>let</code>).<sup>1</sup>
+												</p>
+												<p>
+													Voici un exemple concret qui résume ce concept :
+												</p>
+												<pre>
+													<code>function changerMotDePasse(motDePasse) {
+	let nouveauMotDePasse = `${motDePasse}1234`
+}
+alert(nouveauMotDePasse); //une erreur se produit
+//c’est normal puisque la variable nouveauMotDePasse n’est pas définie hors de la fonction</code>
+											</pre>
+											<p>
+													Pour éviter qu’une telle erreur se produise, il suffit de déclarer la variable hors de la fonction :
+											</p>
+											<pre>
+											<code>let nouveauMotDePasse; //il n’est même pas nécessaire de lui assigner une valeur
+function changerMotDePasse(motDePasse) {
+	nouveauMotDePasse = `${motDePasse}1234`
+}
+alert(nouveauMotDePasse); //aucune erreur ne se produit</code></pre>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      Modifie le code ci-dessous, afin que le montant avec les taxes, qui est assigné à la variable <code>total</code> puisse être affiché.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example1" style="width:50%;display:none;"></textarea>
+                      <br><a id="exec1" class="button primary large">Exécuter</a>
+											<hr class="major" />
+                    </div>
+                    </div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Portée [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Glossaire/Port%C3%A9e
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+				const preCode = `let sousTotal = 89.76;
+function ajouterTaxes(montant) {
+	let total = montant*1.14975;
+}
+ajouterTaxes(sousTotal);
+alert(\`Veuillez payer \${total}$\`)`;
+			const theme = 'cobalt';
+			document.getElementById('example1').value = preCode;
+			let editor1 = CodeMirror.fromTextArea(document.getElementById('example1'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor1.setOption("theme", theme);
+			document.getElementById('exec1').addEventListener("click", () => {
+					let code = editor1.getValue();
+					let ran = true;
+					try {
+						let fn = new Function(code);
+						fn();
+					}
+					catch(e) {
+						handleFail();
+						ran = false;
+					}
+					if(ran)
+						handleSuccess();
+			});
+      </script>
+
+	</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Si/sinon - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Si/sinon</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+												<p>
+													Dans le chapitre précédent, nous avons appris comment comparer des données. En tant que tel, ce n’est pas très utile dans un programme. Toutefois, lorsque ces expressions sont utilisées avec le mot-clé <code>if</code> (si), elles deviennent très utiles.
+												</p>
+												<p>
+													Ce mot-clé permet d’exécuter une série d’instructions, seulement si une condition est remplie (si elle est évaluée à <code>true</code>).
+												</p>
+												<p>
+													Il existe un deuxième mot-clé <code>else</code> (sinon), qui permet de définir un autre bloc de code à exécuter, seulement si la condition n’est pas remplie.
+												</p>
+												<p>
+													Syntaxiquement, la condition est placée entre parenthèses et la série d’instructions est placée juste après, entre deux accolades (<code>{}</code>).
+												</p>
+												<p>
+													Par exemple :
+												</p>
+
+													<pre><code>if(true) {
+  //ce code sera exécuté
+} else {
+  //ce code ne sera pas exécuté
+}</code></pre>
+
+												<p>
+													Il est aussi possible d’avoir d’autres conditions avec <code>if</code> avant le <code>else</code> final. Ces conditions supplémentaires sont dénotées avec les mots-clés <code>else if</code>.<sup>1</sup> Par exemple :
+												</p>
+
+													<pre><code>if(false) {
+  //ce code ne sera pas exécuté
+} else if(true) {
+  //ce code sera exécuté
+} else {
+  //ce code ne sera pas exécuté
+}</code></pre>
+
+												<p>
+													Si aucune des conditions n’est remplie, c’est le code sous le else qui sera exécuté. Par exemple :
+												</p>
+
+													<pre><code>if(false) {
+  //ce code ne sera pas exécuté
+} else if(false) {
+  //ce code ne sera pas exécuté
+} else {
+  //ce code sera exécuté
+}</code></pre>
+
+												<p>
+													Évidemment, les conditions ne seront pratiquement jamais simplement des valeurs booléennes. Ces valeurs sont uniquement employées à titre d’exemple. Dans la vraie vie, tu écrirais plutôt des expressions conditionnelles avec des variables. Par exemple :
+												</p>
+
+													<pre><code>function estPositif(n) {
+  if(n > 0) {
+    return “Ce nombre est positif”;
+  } else if (n < 0) {
+    return “Ce nombre est négatif”;
+  } else {
+    return “Ce nombre est zéro”;
+  }
+}</code></pre>
+
+										</div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      	Complète la fonction <code>estPair(n)</code>. Cette fonction doit prendre pour entrée un nombre <code>n</code> et retourner (<code>return</code>) une valeur booléenne. Cette valeur booléenne doit être <code>true</code> si n est pair et <code>false</code> si n est impair. Par exemple, estPair(5) retourne <code>false</code> et estPair(8) retourne <code>true</code>. Si tu éprouves des difficultés, retourne voir <a href="operations.html">le chapitre sur les opérations</a>.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example1" style="width:50%;display:none;">function estPair(n) {
+	//ton code ici
+}</textarea>
+                      <br><a id="exec1" class="button primary large">Exécuter</a>
+											<hr class="major" />
+											<p>
+                      	Modifie ta fonction <code>estPair(n)</code> pour qu'elle retourne <code>true</code> seulement si <code>n</code> est pair et positif.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example2" style="width:50%;display:none;">//tu peux copier ton code de l'exercice précédent juste ici</textarea>
+                      <br><a id="exec2" class="button primary large">Exécuter</a>
+                    </div>
+                    </div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>if...else [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/if...else
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+        let editor1 = CodeMirror.fromTextArea(document.getElementById('example1'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor1.setOption("theme", theme);
+        document.getElementById('exec1').addEventListener("click", () => {
+					try {
+						let code = editor1.getValue();
+						let addOnCode = `
+							if(estPair(100) && !estPair(99)) {
+								handleSuccess(false);
+							} else {
+								handleFail();
+							}
+						`;
+            let fn = new Function(code + addOnCode);
+            fn();
+					}
+					catch(e) {
+						handleFail();
+					}
+        });
+			let editor2 = CodeMirror.fromTextArea(document.getElementById('example2'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor2.setOption("theme", theme);
+			document.getElementById('exec2').addEventListener("click", () => {
+				try {
+					let code = editor2.getValue();
+					let k = Math.sqrt(Math.sqrt(3)*4);
+					let addOnCode = `
+						if(estPair(100) && !estPair(-100)) {
+							handleSuccess();
+						} else {
+							handleFail();
+						}
+					`;
+					let fn = new Function(code + addOnCode);
+					fn();
+				}
+				catch(e) {
+					handleFail();
+				}
+			});
+      </script>
+
+	</body>
+</html>

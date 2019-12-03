@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Opérations - Un pixel à la fois</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel=stylesheet href="lib/codemirror/theme/cobalt.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Changer le monde</strong> un pixel à la fois</a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Opérations</h1>
+									</header>
+                  <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Explications</u></b></h2>
+												<p>
+													Tout comme en mathématiques, une variété d’opérations existe en JavaScript. La plupart des opérations mathématiques sont aussi disponibles en JavaScript : l’addition, la multiplication, la soustraction, la division, l’exponentiation, la racine carrée, le modulo… Il existe de plus des opérations pour les chaînes de caractères, les listes, les valeurs booléennes et ainsi de suite.
+												</p>
+												<p><b><u>
+													Opérations sur les nombres
+												</u></b></p>
+												<p>
+													Ces opérations sont très semblables aux opérations mathématiques. Commençons par les opérations de bases, avec lesquelles tu es sûrement déjà familier.
+												</p>
+												<p>
+													<ul>
+														<li>
+															<b>L’addition</b> : le symbole est exactement le même qu’en mathématiques (<code>+</code>) et il s’utilise de la même façon. Par exemple : <code>let x = 1 + 2 + 3;</code> La variable <code>x</code> est égale à <code>6</code>.
+														</li><br>
+														<li>
+															<b>La soustraction</b> : le symbole est exactement le même qu’en mathématiques (<code>-</code>) et il s’utilise de la même façon. Par exemple : <code>let x = 6 - 2 - 3;</code> La variable <code>x</code> est égale à <code>1</code>.
+														</li><br>
+														<li>
+															<b>La multiplication</b> : le symbole est un peu différent du symbole mathématique. Il s’agit d’un astérisque (<code>*</code>). Il s’utilise toutefois exactement de la même façon. Par exemple : <code>let x = 4*3*2*1;</code> La variable <code>x</code> est égale à <code>24</code>.
+														</li><br>
+														<li>
+															<b>La division</b> : le symbole est un peu différent du symbole mathématique. Il s’agit d’une barre oblique (<code>/</code>). Il s’utilise toutefois exactement de la même façon. Par exemple : <code>let x = 14/7</code>; La variable <code>x</code> est égale à <code>2</code>.
+														</li><br>
+														<li>
+															<b>L'exponentiation</b> : le symbole est un peu différent du symbole mathématique. Il s’agit de deux astérisques consécutifs (<code>**</code>). Il s’utilise toutefois exactement de la même façon.<sup>1</sup> Par exemple : <code>let x = 5**2</code>; La variable <code>x</code> est égale à <code>25</code>.
+														</li>
+													</ul>
+												</p>
+												<p>
+													La racine carrée de son côté n’a pas de symbole particulier. Il faut donc avoir recours à un objet JavaScript natif : <code>Math</code>. Il s’agit d’un objet inclus dans JavaScript. Il n’y a rien à installer pour pouvoir y accéder. La fonction racine carrée est disponible dans cet objet sous le nom <code>sqrt</code>. Par exemple : <code>let x = Math.sqrt(16);</code> La variable <code>x</code> est égale à <code>4</code>.
+												</p>
+												<p>
+													La fonction racine carrée est toutefois loin d’être la seule disponible sous l’objet <code>Math</code>. Il y a plus ou moins toutes les fonctions mathématiques : sinus, cosinus, logarithme naturel, valeur absolue, entier inférieur, entier supérieur…
+												</p>
+												<p>
+													L’objet <code>Math</code> contient aussi des constantes mathématiques comme π (<code>Math.PI</code>) ou le nombre d’Euler (<code>Math.E</code>).
+												</p>
+												<p>
+													Finalement, l’objet Math permet de générer une valeur aléatoire entre 0 et 1, avec la fonction <code>Math.random()</code>. Cette fonctionnalité peut être utile pour la création de certains jeux vidéos. Pour plus d’information sur l’objet global Math, tu peux consulter <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math">cette page</a><sup>2</sup>.
+												</p>
+												<p>
+													Pour terminer, il existe une autre opération mathématique, qui est représentée en JavaScript par un symbole. Il s’agit de la fonction modulo, qui correspond au symbole <code>%</code>. Cette opération retourne le reste d’une division. Par exemple, <code>5%2</code> retourne <code>1</code>, puisque le plus gros multiple de 2 plus petit que 5 est 4. La différence entre 5 et 4 est de 1.
+												</p>
+												<p>
+													Cette opération peut te sembler très complexe. Pourtant, tu l’utilisais déjà au primaire. En effet, lorsque tu effectuais une division à la main, tu écrivais souvent le reste au lieu de la partie décimale. Par exemple :
+												</p>
+												<img src='images/division.png'/>
+												<p>
+													Dans ce cas, tu aurais pu écrire 968÷3 = 322 reste 2. Le modulo retourne seulement le reste, donc <code>968%3</code> retourne <code>2</code>.
+												</p>
+												<p>
+													Cette fonction peut entre autres être utile pour déterminer si un nombre est pair ou impair. En effet si le ce nombre modulo 2 retourne 0, il s’agit d’un nombre pair. Au contraire, si le résultat est 1, il s’agit d’un nombre impair.
+												</p>
+												<p><b><u>
+													Opérations sur les chaînes de caractères
+												</u></b></p>
+												<p>
+													Les chaînes de caractères peuvent aussi être additionnées avec le symbole <code>+</code>. Par exemple <code>"a" + "b"</code> retourne <code>"ab"</code>. Le reste des opérations mathématiques retournent toutefois <code>NaN</code> lorsqu’utilisées sur du texte.
+												</p>
+												<p>
+													Il est aussi possible de retourner le caractère situé à un index précis de la chaîne avec la fonction <code>charAt()</code>. Par exemple <code>"ab".charAt(1)</code> retourne <code>"b"</code> (l’index commence à 0, comme avec les listes). Les chaînes peuvent aussi être traitées comme des listes de caractères. Pour cette raison, <code>"ab"[1]</code> retourne aussi <code>"b"</code>.
+												</p>
+												<p>
+													La fonction <code>toLowerCase()</code> permet de rendre toutes les lettres d’une chaîne minuscules. Au contraire, la fonction <code>toUpperCase()</code> permet de rendre toutes les lettres majuscules. Par exemple : <code>"AB".toLowerCase()</code> retourne <code>"ab"</code> et <code>"ab".toUpperCase()</code> retourne <code>"AB"</code>.
+												</p>
+												<p>
+													La fonction <code>replace</code> permet de remplacer une partie de la chaîne par une autre. Par exemple, <code>"abc".replace("c", "a")</code> retourne <code>"aba"</code>.
+												</p>
+												<p>
+													Il existe plusieurs autres fonctions pour les chaînes de caractères. Elles sont répertoriées sur <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String">cette page</a>.<sup>3</sup>
+												</p>
+												<p><b><u>
+													Opérations sur les listes
+												</u></b></p>
+												<p>
+													Ajouter un élément à une liste ne se fait pas comme une addition. Il faut plutôt utiliser la fonction <code>push</code>. Par exemple :
+												</p>
+												<pre>
+												<code>let A = ["A", "B"];
+A.push("C"); //A est maintenant ["A", "B", "C"]</code></pre>
+												<p>
+													Pour trouver l’index d’un élément d’une liste, on utilise la fonction <code>indexOf</code>. Par exemple : <code>["A", "B"].indexOf("A")</code> retourne <code>0</code>. C’est normal puisque la numérotation commence à <code>0</code>. Si l’élément n’existe pas, la fonction retourne <code>-1</code>. Par exemple : <code>["A", "B"].indexOf("C")</code> retourne <code>-1</code>.
+												</p>
+												<p>
+													Pour supprimer un élément particulier d’une liste, on utilise la fonction <code>splice</code>. Par exemple :
+												</p>
+												<pre>
+													<code>let A = ["A", "B", "C", "D"];
+A.splice(2, 1) //le premier argument (2) est l’index
+//et le deuxième (1) est le nombre d’éléments à supprimer
+//A est donc maintenant ["A", "B", "D"]</code></pre>
+												<p>
+													Il existe plusieurs autres fonctions pour les listes. Elles sont répertoriées sur <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">cette page</a>.<sup>4</sup>
+												</p>
+										</div>
+                    <div class="col-6 col-12-medium">
+                      <h2><b><u>Exercices</u></b></h2>
+                      <p>
+                      	Complète la fonction <code>convertirCelsiusFahrenheit</code>. Cette fonction doit prendre pour entrée une valeur en degrés Celsius et la retourner (avec <code>return</code>) en degrés Fahrenheit. La règle de conversion est la suivante : la température en °F est égale à la température en °C multipliée par 9, puis divisée par 5 et finalement additionée de 32.
+                      </p>
+                      <hr class="major" />
+                      <textarea id="example1" style="width:50%;display:none;">function convertirCelsiusFahrenheit(températureCelsius) {
+	//ton code ici
+	return températureFahrenheit;
+}</textarea>
+                      <br><a id="exec1" class="button primary large">Exécuter</a>
+											<hr class="major" />
+											<p>
+                      L'aire d'un triangle équilatéral (triangle dont les trois côtés ont la même mesure) peut être calculée avec la formule suivante, où A est l'aire et c la mesure d'un côté :
+                      </p>
+											<img src="images/equation.gif"/ style="width:25%;"><br><br>
+											<p>
+												Complète la fonction <code>aireTriangle(c)</code> ci-dessous, pour qu'elle retourne (<code>return</code>) l'aire <code>A</code> d'un triangle équilatéral de côté <code>c</code>.
+											</p>
+                      <hr class="major" />
+                      <textarea id="example2" style="width:50%;display:none;">function aireTriangle(c) {
+  //ton code ici
+	return A;
+}</textarea>
+                      <br><a id="exec2" class="button primary large">Exécuter</a>
+											<hr class="major" />
+											<p>
+												Complète la fonction <code>nomPropre(nom)</code> ci-dessous, pour qu'elle retourne (<code>return</code>) le nom propre <code>nom</code> avec une lettre majuscule en première position. Par exemple : <code>nomPropre("paris")</code> retourne <code>"Paris"</code>.
+											</p>
+                      <hr class="major" />
+                      <textarea id="example3" style="width:50%;display:none;">function nomPropre(nom) {
+  //ton code ici
+	return nom;
+}</textarea>
+                      <br><a id="exec3" class="button primary large">Exécuter</a>
+											<hr class="major" />
+											<p>
+												Complète la fonction <code>censure(fruits)</code> ci-dessous, pour qu'elle retourne (<code>return</code>) une version de <code>fruits</code> sans le mot <code>"kiwi"</code> Par exemple : <code>nomPropre(["pomme", "raisin", "kiwi", "pêche"])</code> retourne <code>["pomme", "raisin", "pêche"]</code>.
+											</p>
+                      <hr class="major" />
+                      <textarea id="example4" style="width:50%;display:none;">function censure(fruits) {
+  //ton code ici
+	return fruits;
+}</textarea>
+                      <br><a id="exec4" class="button primary large">Exécuter</a>
+                    </div>
+                    </div>
+								</section>
+								<a onclick="nextPage()" class="button primary large">Page suivante</a><br><br>
+								<div class="box"><p style="font-size:70%;"><sup>1</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Expressions et opérateurs [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_et_Op%C3%A9rateurs<br>
+									<sup>2</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Math [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math<br>
+									<sup>3</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>String [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String<br>
+									<sup>4</sup> S.A., MDN web docs, (réf. du 12 octobre 2019), <em>Tableau (array) [en ligne]</em>, adresse URL: https://developer.mozilla.org/fr/docs/Glossaire/array
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="lib/codemirror/codemirror.js"></script>
+			<script type="text/javascript" src="lib/codemirror/mode/javascript.js"></script>
+      <script>
+        let editor1 = CodeMirror.fromTextArea(document.getElementById('example1'), {
+          lineNumbers: true,
+          styleActiveLine: false,
+          matchBrackets: true
+        });
+        const theme = 'cobalt';
+        editor1.setOption("theme", theme);
+        document.getElementById('exec1').addEventListener("click", () => {
+					try {
+						let code = editor1.getValue();
+						let addOnCode = `
+							if(convertirCelsiusFahrenheit(100) === 212 && convertirCelsiusFahrenheit(0) === 32) {
+								handleSuccess(false);
+							} else {
+								handleFail();
+							}
+						`;
+            let fn = new Function(code + addOnCode);
+            fn();
+					}
+					catch(e) {
+						handleFail();
+					}
+        });
+			let editor2 = CodeMirror.fromTextArea(document.getElementById('example2'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor2.setOption("theme", theme);
+			document.getElementById('exec2').addEventListener("click", () => {
+				try {
+					let code = editor2.getValue();
+					let k = Math.sqrt(Math.sqrt(3)*4);
+					let addOnCode = `
+						if(Math.abs(aireTriangle(${k}) - 3) < 0.1) {
+							handleSuccess(false);
+						} else {
+							handleFail();
+						}
+					`;
+					let fn = new Function(code + addOnCode);
+					fn();
+				}
+				catch(e) {
+					handleFail();
+				}
+			});
+			let editor3 = CodeMirror.fromTextArea(document.getElementById('example3'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor3.setOption("theme", theme);
+			document.getElementById('exec3').addEventListener("click", () => {
+				try {
+					let code = editor3.getValue();
+					let addOnCode = `
+						if(nomPropre("frank") === "Frank") {
+							handleSuccess(false);
+						} else {
+							handleFail();
+						}
+					`;
+					let fn = new Function(code + addOnCode);
+					fn();
+				}
+				catch(e) {
+					handleFail();
+				}
+			});
+			let editor4 = CodeMirror.fromTextArea(document.getElementById('example4'), {
+				lineNumbers: true,
+				styleActiveLine: false,
+				matchBrackets: true
+			});
+			editor4.setOption("theme", theme);
+			document.getElementById('exec4').addEventListener("click", () => {
+				try {
+					let code = editor4.getValue();
+					let addOnCode = `
+						if(censure(['fraise', 'kiwi', 'orange'])[1] === 'orange') {
+							handleSuccess(false);
+						} else {
+							handleFail();
+						}
+					`;
+					let fn = new Function(code + addOnCode);
+					fn();
+				}
+				catch(e) {
+					handleFail();
+				}
+			});
+      </script>
+
+	</body>
+</html>
